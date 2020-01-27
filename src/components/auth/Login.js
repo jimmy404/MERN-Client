@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Login = () => {
+    //State login
+    const [usuario, guardarUsuario] = useState({
+        email: '',
+        password: ''
+    });
 
     const onChange = () => {
 
