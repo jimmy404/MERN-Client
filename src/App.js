@@ -5,7 +5,14 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <h1>MERN</h1>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
+        <Route exact path="/proyectos" component={Proyectos}/>
+
+      </Switch>
+    </Router>
   );
 }
 
