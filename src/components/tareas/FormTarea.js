@@ -12,6 +12,13 @@ const FormTarea = () => {
                         name="nombre"
                         />
                 </div>
+                <div className="contenedor-input">
+                    <input
+                        type="submit"
+                        className="btn btn-primario btn-submit btn-block"
+                        value="Agregar Tarea"
+                        />
+                </div>
             </form>
         </div>
     );
