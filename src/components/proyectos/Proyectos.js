@@ -2,7 +2,18 @@ import React from 'react';
 
 const Proyectos = () => {
     return (
-        <h1>Deste proyectos</h1>
+        <div className="contenedor-app">
+            <aside>
+
+            </aside>
+            <div className="seccion-principal">
+                <main>
+                    <div className="contenedor-tareas">
+
+                    </div>
+                </main>
+            </div>
+        </div>
     );
 }
 
