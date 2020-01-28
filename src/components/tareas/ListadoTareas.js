@@ -8,8 +8,8 @@ const ListadoTareas = () => {
         { id: 2, nombre: 'Elegir Codigo', estado: false},
         { id: 3, nombre: 'Elegir Hosting', estado: false},
         { id: 4, nombre: 'Elegir Forma de Pago', estado: true},
-
     ]
+
 
     return (
         <Fragment>
