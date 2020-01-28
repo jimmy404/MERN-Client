@@ -46,6 +46,12 @@ const ProyectoState = props => {
     //Agregar nuevo proyecto
     const agregarProyecto = proyecto => {
         proyecto.id = uuid.v4();
+
+        //insertar proyecto en state c/ dispatch
+        dispatch({
+            type: AGREGAR_PROYECTOS,
+            payload: proyectos
+        })
     }
 
     return(
@@ -54,7 +60,8 @@ const ProyectoState = props => {
                 proyectos: state.proyectos,
                 formulario: state.formulario,
                 mostrarFormulario,
-                obtenerProyectos
+                obtenerProyectos,
+                agregarProyecto
             }}
         >
             {props.children}
