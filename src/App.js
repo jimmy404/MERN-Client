@@ -6,21 +6,22 @@ import NuevaCuenta from './components/auth/NuevaCuenta';
 import Proyectos from './components/proyectos/Proyectos';
 
 import ProyectoState from './context/proyectos/proyectoState';
-import proyectoContext from './context/proyectos/proyectoContext';
+import TareasState from './context/tareas/tareaState';
 
 
 
 function App() {
   return (
     <ProyectoState>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Login}/>
-          <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
-          <Route exact path="/proyectos" component={Proyectos}/>
-
-        </Switch>
-      </Router>
+      <TareasState>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Login}/>
+            <Route exact path="/nueva-cuenta" component={NuevaCuenta}/>
+            <Route exact path="/proyectos" component={Proyectos}/>
+          </Switch>
+        </Router>
+      </TareasState>
     </ProyectoState>
   );
 }
