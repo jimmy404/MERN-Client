@@ -1,8 +1,12 @@
-import React, { Fragment} from 'react';
+import React, { Fragment, useContext} from 'react';
 import Tarea from './Tarea';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 
 const ListadoTareas = () => {
+
+    //Obtener state de proyectos
+    const proyectosContext = useContext(proyectoContext);
+    const { proyecto } = proyectosContext;
 
     const tareasProyecto = [
         { id: 1, nombre: 'Elegir Plataforma', estado: true},
