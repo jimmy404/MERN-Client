@@ -5,7 +5,8 @@ import TareaReducer from './tareaReducer';
 import {
         TAREAS_PROYECTO,
         AGREGAR_TAREA,
-        VALIDAR_TAREA
+        VALIDAR_TAREA,
+        ELIMINAR_TAREA
     } from '../../types';
 
 const TareaState = props => {
@@ -14,13 +15,13 @@ const TareaState = props => {
             { id: 1, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
             { id: 2, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
             { id: 3, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 1, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
-            { id: 2, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
-            { id: 3, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 1, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
-            { id: 2, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
-            { id: 3, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 4, nombre: 'Elegir Forma de Pago', estado: true, proyectoId: 4}
+            { id: 4, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
+            { id: 5, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
+            { id: 6, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
+            { id: 7, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
+            { id: 8, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
+            { id: 9, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
+            { id: 10, nombre: 'Elegir Forma de Pago', estado: true, proyectoId: 4}
         ],
         tareasproyecto: null,
         errortarea: false
@@ -55,6 +56,13 @@ const TareaState = props => {
         })
     }
 
+    //Eliminar tarea por id
+    const eliminarTarea = id => {
+        dispatch({
+            type: ELIMINAR_TAREA,
+            payload: id
+        })
+    }
     return(
         <TareaContext.Provider
         value={{
@@ -63,7 +71,8 @@ const TareaState = props => {
             errortarea: state.errortarea,
             obtenerTareas,
             agregarTarea,
-            validarTarea
+            validarTarea,
+            eliminarTarea
         }}>
             {props.children}
         </TareaContext.Provider>
