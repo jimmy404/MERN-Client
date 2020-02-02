@@ -1,7 +1,5 @@
 import React, { useReducer } from 'react';
 
-import uuid from 'uuid';
-
 import proyectoContext from './proyectoContext';
 import proyectoReducer from './proyectoReducer';
 import {
@@ -51,7 +49,6 @@ import {
 
     //Agregar nuevo proyecto
     const agregarProyecto = proyecto => {
-        proyecto.id = uuid.v4();
 
         //insertar proyecto en state c/ dispatch
         dispatch({
