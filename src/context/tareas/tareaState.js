@@ -16,18 +16,6 @@ import {
 
 const TareaState = props => {
     const initialState = {
-        tareas: [
-            { id: 1, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
-            { id: 2, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
-            { id: 3, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 4, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
-            { id: 5, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
-            { id: 6, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 7, nombre: 'Elegir Plataforma', estado: true, proyectoId: 1},
-            { id: 8, nombre: 'Elegir Codigo', estado: false, proyectoId: 2},
-            { id: 9, nombre: 'Elegir Hosting', estado: false, proyectoId: 3},
-            { id: 10, nombre: 'Elegir Forma de Pago', estado: true, proyectoId: 4}
-        ],
         tareasproyecto: null,
         errortarea: false,
         tareaseleccionada: null
@@ -49,7 +37,6 @@ const TareaState = props => {
 
     //Agregar una tarea al proyecto seleccionado
     const agregarTarea = tarea => {
-        tarea.id = uuid.v4();
         dispatch({
             type: AGREGAR_TAREA,
             payload: tarea
@@ -104,7 +91,6 @@ const TareaState = props => {
     return(
         <TareaContext.Provider
         value={{
-            tareas: state.tareas,
             tareasproyecto: state.tareasproyecto,
             errortarea: state.errortarea,
             tareaseleccionada: state.tareaseleccionada,
