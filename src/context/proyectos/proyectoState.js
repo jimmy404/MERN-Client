@@ -16,12 +16,6 @@ import clienteAxios from '../../config/axios';
 
     const ProyectoState = props => {
 
-    const proyectos = [
-        { id: 1, nombre: 'Tienda Virtual' },
-        { id: 2, nombre: 'Intranet' },
-        { id: 3, nombre: 'Shopping' }
-    ]
-
     const initialState = {
         proyectos: [],
         formulario: false,
