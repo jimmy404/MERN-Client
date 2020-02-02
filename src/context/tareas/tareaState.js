@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 import TareaContext from './tareaContext';
 import TareaReducer from './tareaReducer';
-import uuid from 'uuid';
 
 import {
         TAREAS_PROYECTO,
@@ -14,9 +13,11 @@ import {
         LIMPIAR_TAREA
     } from '../../types';
 
+import clienteAxios from '../../config/axios';
+
 const TareaState = props => {
     const initialState = {
-        tareasproyecto: null,
+        tareasproyecto: [],
         errortarea: false,
         tareaseleccionada: null
     }
@@ -27,20 +28,30 @@ const TareaState = props => {
     //crear funciones
 
     //obtener las tareas de un proyecto especifico
-    const obtenerTareas = proyectoId => {
-        dispatch({
-            type: TAREAS_PROYECTO,
-            payload: proyectoId,
-            obtenerTareas
-        })
+    const obtenerTareas = async proyecto => {
+        try {
+            const resultado = await clienteAxios.get('/api/tareas', {params: {proyecto}});
+            dispatch({
+                type: TAREAS_PROYECTO,
+                payload: resultado.data.tareas
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     //Agregar una tarea al proyecto seleccionado
-    const agregarTarea = tarea => {
-        dispatch({
-            type: AGREGAR_TAREA,
-            payload: tarea
-        })
+    const agregarTarea = async tarea => {
+        try {
+            const resultado = await clienteAxios.post('/api/tareas', tarea);
+            console.log(resultado);
+            dispatch({
+                type: AGREGAR_TAREA,
+                payload: tarea
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     //valida y muestra error de ser necesario
