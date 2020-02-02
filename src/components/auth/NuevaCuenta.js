@@ -47,6 +47,10 @@ const NuevaCuenta = () => {
             return;
         }
         //Passwords coincidentes
+        if(password !== confirmar){
+            mostrarAlerta('Los password no coinciden', 'alerta-error');
+            return;
+        }
 
         //pasar al action
     }
