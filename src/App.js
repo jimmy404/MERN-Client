@@ -15,7 +15,7 @@ function App() {
   return (
     <ProyectoState>
       <TareasState>
-      <AlertaState>
+        <AlertaState>
           <Router>
             <Switch>
               <Route exact path="/" component={Login}/>
